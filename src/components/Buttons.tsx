@@ -1,4 +1,3 @@
-import { Button, Title } from '@mantine/core';
 import SearchBar from './SearchBar';
 
 function ButtonComponent() {
