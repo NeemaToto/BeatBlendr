@@ -1,17 +1,17 @@
 import { Route, Routes} from 'react-router-dom';
 import NotFound from './NotFound';
-import TextComponent from './Text';
-import ButtonComponent from './Buttons';
+import DashboardPage from './DashboardPage';
+import SearchPage from './SearchPage';
+import LandingPage from './LandingPage';
 
-const RouterSwitcher = () => {
+export default function RouterSwitcher() {
   return (
     <Routes>
-      <Route path='/' element={<TextComponent />} />
+      <Route path='/' element={<LandingPage />} />
       <Route path="*" element={<NotFound />} />
-      <Route path="/text-component" element={<TextComponent />} />
-      <Route path="/button-component" element={<ButtonComponent />} />
+      <Route path="/dashboard" element={<DashboardPage />} />
+      <Route path="/search" element={<SearchPage />} />
     </Routes>
   );
 };
 
-export default RouterSwitcher;

@@ -1,6 +1,6 @@
 import SearchBar from './SearchBar';
 
-function ButtonComponent() {
+export default function SearchPage() {
 
 
   
@@ -10,5 +10,3 @@ function ButtonComponent() {
     </div>
   );
 }
-
-export default ButtonComponent;

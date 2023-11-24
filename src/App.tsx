@@ -8,6 +8,7 @@ import RouterSwitcher from './components/RouterSwitcher'
 
 export default function App() {
   const [opened, { toggle }] = useDisclosure();
+
   return (
     <MantineProvider theme={theme}>
       <AppShell
