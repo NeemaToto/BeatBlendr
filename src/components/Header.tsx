@@ -3,7 +3,6 @@ import { FaSun, FaMoon } from 'react-icons/fa';
 import { IconVinyl, IconLogout2 } from '@tabler/icons-react'
 import { useNavigate } from 'react-router-dom';
 
-
 export default function Header({ toggle, opened }: any) {
     const { setColorScheme } = useMantineColorScheme();
     const computedColorScheme = useComputedColorScheme('light');

@@ -1,6 +1,8 @@
 import { Button, Flex, Title, Text } from '@mantine/core';
 import { useState, useEffect } from 'react'
 import { useNavigate } from "react-router-dom";
+import { IconBrandSpotify } from '@tabler/icons-react'
+
 
 export default function LandingPage() {
 
@@ -8,6 +10,7 @@ export default function LandingPage() {
     const REDIRECT_URI = 'http://localhost:5173/';
     const AUTH_ENDPOINT = 'https://accounts.spotify.com/authorize';
     const RESPONSE_TYPE = 'token'
+    const SCOPES = 'playlist-modify-private playlist-modify-public playlist-read-private playlist-read-collaborative user-library-modify user-library-read';
 
     const navigate = useNavigate();
 
@@ -22,7 +25,6 @@ export default function LandingPage() {
                 .substring(1)
                 .split('&')
                 .find(elem => elem.startsWith('access_token'));
-
             if (foundToken) {
                 storedToken = foundToken.split('=')[1];
                 window.location.hash = '';
@@ -30,7 +32,7 @@ export default function LandingPage() {
                 navigate("/dashboard");
             }
         }
-        setToken(storedToken || ''); // Set an empty string as default if token is null 
+        setToken(storedToken || '');
     }, [])
 
     console.log('this is a token' + token)
@@ -42,10 +44,16 @@ export default function LandingPage() {
                     Welcome to BeatBlendr!
                 </Title>
                 <Title order={6}>
-                    <Text size="lg">To use our features, please sign in to your spotify account</Text>
+                    <Text size="lg">To use our features, please login to your <span style={{ color: '#1DB954' }}>Spotify</span> account</Text>
                 </Title>
             </Flex>
-            <Button component='a' href={`${AUTH_ENDPOINT}?client_id=${CLIENT_ID}&redirect_uri=${REDIRECT_URI}&response_type=${RESPONSE_TYPE}`}>Login to Spotify</Button>
+            <Button
+                component='a'
+                href={`${AUTH_ENDPOINT}?client_id=${CLIENT_ID}&redirect_uri=${REDIRECT_URI}&response_type=${RESPONSE_TYPE}&scope=${encodeURIComponent(SCOPES)}`}
+                rightSection={<IconBrandSpotify size={25} />}
+            >
+                Login to Spotify
+            </Button>
         </Flex>
     )
 }
