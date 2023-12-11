@@ -1,11 +1,12 @@
-# Mantine Vite template
+# BeatBlendr
 
-Get started with the template by clicking `Use this template` button on the top of the page.
+## Made by Neema, Meelaud, Parker
+## COMP 3170, Set G
 
-[Documentation](https://mantine.dev/guides/vite/)
+## Description
+Beatblendr is a web application that allows you to create/delete playlists, and add/delete songs to/from those playlists. It is automatically uploaded to your real spotify account.
+Must sign in to a real spotify account to use BeatBlendr (Because of the way the API works)
 
+### API Used: [Spotify Web API](https://developer.spotify.com/documentation/web-api)
 
-# Installs
-
-1. npm i (if npm run dev isn't working)
-2. npm i react-router-dom
+### Library Used: [] 
