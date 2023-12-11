@@ -1,31 +1,34 @@
-import { useLocation } from 'react-router-dom';
 import { useState, useEffect } from 'react'
 import { Image, Flex, Divider, Title, Text } from '@mantine/core';
 import { IconTrash } from '@tabler/icons-react'
 import { useNavigate } from "react-router-dom";
 
 export default function TargetPlaylistsPage() {
-    const location = useLocation();
     const token = localStorage.getItem('token')
     const [tracks, setTracks] = useState([]);
     const [playlistID, setPlaylistID] = useState('');
     const [playlistSnapshot, setPlaylistSnapshot] = useState('');
-    const playlistObject = JSON.parse(location.state.playlistTarget);
-
-    const trackLink = playlistObject.tracks.href;
-
+    const playlistObject = localStorage.getItem('playlistTrack')
     const navigate = useNavigate();
 
-    useEffect(() => {
+     // Conditionally rendering the component when playlistObject is null
+  if (!playlistObject) {
+    return <div>Playlist not found or not loaded.</div>; // Or handle the situation differently
+  }
+
+  // Parse playlistObject when it exists
+  const parsedPlaylistObject = JSON.parse(playlistObject);
+  const trackLink = parsedPlaylistObject.tracks.href;
+
+  // Use parsedPlaylistObject properties
+  useEffect(() => {
+    setPlaylistID(parsedPlaylistObject.id);
+    setPlaylistSnapshot(parsedPlaylistObject.snapshot_id);
+  }, [parsedPlaylistObject.id, parsedPlaylistObject.snapshot_id]);
+
+ useEffect(() => {
         fetchTracks();
     }, []);
-
-    useEffect(() => {
-        setPlaylistID(playlistObject.id);
-        setPlaylistSnapshot(playlistObject.snapshot_id);
-    }, [playlistObject.id, playlistObject.snapshot_id]);
-
-
     function fetchTracks() {
         fetch(`${trackLink}`, {
             headers: {

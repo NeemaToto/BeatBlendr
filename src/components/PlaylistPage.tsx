@@ -59,7 +59,8 @@ export default function PlaylistPage() {
 
   function handleID(playlist: object) {
     const playlistTrack = JSON.stringify(playlist);
-    navigate("/targetplaylistpage", { state: { playlistTarget: `${playlistTrack}`} });
+    window.localStorage.setItem('playlistTrack', playlistTrack)
+    navigate("/targetplaylistpage");
   }
 
   const renderItem = (playlist: any, index: number) => {
