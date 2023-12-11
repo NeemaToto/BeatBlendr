@@ -31,7 +31,7 @@ export default function PlaylistPage() {
   useEffect(() => {
     if (user) {
       setUserId(user.id)
-      setTimeout(() => {fetchPlaylists(user.id)}, 2000);
+      fetchPlaylists(user.id);
     }
   }, [user]);
 
