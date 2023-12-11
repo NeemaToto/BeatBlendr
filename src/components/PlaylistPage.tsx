@@ -66,8 +66,8 @@ export default function PlaylistPage() {
   const renderItem = (playlist: any, index: number) => {
     const imageUrl = playlist.images.length > 0 ? playlist.images[0].url : 'https://placekitten.com/300/300';
 
-    const playlistName = playlist.name.length > 28
-            ? `${playlist.name.substring(0, 28)}...`
+    const playlistName = playlist.name.length > 18
+            ? `${playlist.name.substring(0, 18)}...`
             : playlist.name;
 
     return (
