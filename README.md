@@ -1,4 +1,4 @@
-# BeatBlendr
+# BeatBlendr [Link to Vercel](https://beat-blendr.vercel.app)
 
 ## Made by Neema, Meelaud, Parker
 Everyone made equal contributions while we worked on it together and commited code under 1 account.
