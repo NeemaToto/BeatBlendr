@@ -31,7 +31,7 @@ export default function PlaylistPage() {
   useEffect(() => {
     if (user) {
       setUserId(user.id)
-      fetchPlaylists(user.id);
+      fetchPlaylists();
     }
   }, [user]);
 
@@ -92,32 +92,33 @@ export default function PlaylistPage() {
     );
   };
 
-  const fetchPlaylists = (userid) => {
-    console.log('the token is: ' + token)
-    console.log('user id is: ' + userid)
-    
-    fetch(`https://api.spotify.com/v1/users/${userid}/playlists`, {
-      headers: {
-        'Authorization': `Bearer ${token}`
-      }
-    })
-      .then((response) => {
-        if (response.ok) {
-          return response.json();
-        } else {
-          throw new Error('Failed to fetch playlists');
+  const fetchPlaylists = () => {
+    if (user) {
+      const userid = user.id; // Access user ID directly here
+      console.log('the token is: ' + token)
+      console.log('user id is: ' + userid)
+      
+      fetch(`https://api.spotify.com/v1/users/${userid}/playlists`, {
+        headers: {
+          'Authorization': `Bearer ${token}`
         }
       })
-      .then((data) => {
-        if (user) {
-          const userPlaylists = data.items.filter((playlist: { owner: { display_name: string; }; }) => playlist.owner.display_name === user.display_name);
+        .then((response) => {
+          if (response.ok) {
+            return response.json();
+          } else {
+            throw new Error('Failed to fetch playlists');
+          }
+        })
+        .then((data) => {
+          const userPlaylists = data.items.filter((playlist) => playlist.owner.display_name === user.display_name);
           setPlaylists(userPlaylists);
           console.log(userPlaylists);
-        }
-      })
-      .catch(err => {
-        console.log(err)
-      })
+        })
+        .catch(err => {
+          console.log(err)
+        })
+    }
   }
 
   function handleSubmit() {
