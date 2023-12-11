@@ -9,7 +9,7 @@ interface SpotifyUser {
 export default function DisplayAndAddPlaylists({ title, trackURI, closeModal }) {
     const [playlists, setPlaylists] = useState([]);
     const token = localStorage.getItem('token')
-    const [userId, setUserId] = useState('')
+    // const [userId, setUserId] = useState('')
     const [user, setUser] = useState<SpotifyUser | null>(null);
 
     useEffect(() => {
@@ -19,7 +19,7 @@ export default function DisplayAndAddPlaylists({ title, trackURI, closeModal }) 
     useEffect(() => {
         if (user) {
             fetchPlaylists();
-            setUserId(user.id)
+            // setUserId(user.id)
         }
     }, [user]);
 
