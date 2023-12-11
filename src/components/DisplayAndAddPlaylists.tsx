@@ -24,7 +24,7 @@ export default function DisplayAndAddPlaylists({ title, trackURI, closeModal }) 
     }, [user]);
 
     if (!user) {
-        return <div>User not found or not loaded.</div>; // Or handle the situation differently
+        return <div>User not found or not loaded.</div>;
       }
 
     const renderItem = (playlist: any, index: number) => {

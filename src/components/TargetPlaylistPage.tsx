@@ -9,23 +9,20 @@ export default function TargetPlaylistsPage() {
     const [playlistSnapshot, setPlaylistSnapshot] = useState('');
     const playlistObject = localStorage.getItem('playlistTrack')
 
-     // Conditionally rendering the component when playlistObject is null
-  if (!playlistObject) {
-    return <div>Playlist not found or not loaded.</div>; // Or handle the situation differently
-  }
+    if (!playlistObject) {
+        return <div>Playlist not found or not loaded.</div>;
+    }
 
-  // Parse playlistObject when it exists
-  const parsedPlaylistObject = JSON.parse(playlistObject);
-  const trackLink = parsedPlaylistObject.tracks.href;
+    const parsedPlaylistObject = JSON.parse(playlistObject);
+    const trackLink = parsedPlaylistObject.tracks.href;
 
-  // Use parsedPlaylistObject properties
-  useEffect(() => {
-    console.log('pasd: '+ parsedPlaylistObject)
-    setPlaylistID(parsedPlaylistObject.id);
-    setPlaylistSnapshot(parsedPlaylistObject.snapshot_id);
-  }, [parsedPlaylistObject.id, parsedPlaylistObject.snapshot_id]);
+    useEffect(() => {
+        console.log('pasd: ' + parsedPlaylistObject)
+        setPlaylistID(parsedPlaylistObject.id);
+        setPlaylistSnapshot(parsedPlaylistObject.snapshot_id);
+    }, [parsedPlaylistObject.id, parsedPlaylistObject.snapshot_id]);
 
- useEffect(() => {
+    useEffect(() => {
         fetchTracks();
     }, []);
     function fetchTracks() {

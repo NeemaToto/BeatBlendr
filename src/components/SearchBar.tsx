@@ -1,4 +1,3 @@
-// SearchBar.js
 import { useState } from "react";
 import { Input, Button, Container, Flex } from "@mantine/core";
 

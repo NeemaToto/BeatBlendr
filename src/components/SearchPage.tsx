@@ -1,4 +1,3 @@
-// SearchPage.js
 import SearchBar from './SearchBar';
 import { useState } from 'react';
 import { Modal, Image, Flex, Text, Title, Divider } from '@mantine/core';
