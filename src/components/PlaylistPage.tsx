@@ -92,10 +92,11 @@ export default function PlaylistPage() {
     );
   };
 
-  const fetchPlaylists = (user) => {
-    console.log('the token' + token)
-    console.log('user is' + user)
-    fetch(`https://api.spotify.com/v1/users/${user}/playlists`, {
+  const fetchPlaylists = (userid) => {
+    console.log('the token is: ' + token)
+    console.log('user id is: ' + userid)
+    
+    fetch(`https://api.spotify.com/v1/users/${userid}/playlists`, {
       headers: {
         'Authorization': `Bearer ${token}`
       }
