@@ -2,6 +2,7 @@ import { useLocation } from 'react-router-dom';
 import { useState, useEffect } from 'react'
 import { Image, Flex, Divider, Title, Text } from '@mantine/core';
 import { IconTrash } from '@tabler/icons-react'
+import { useNavigate } from "react-router-dom";
 
 export default function TargetPlaylistsPage() {
     const location = useLocation();
@@ -12,6 +13,8 @@ export default function TargetPlaylistsPage() {
     const playlistObject = JSON.parse(location.state.playlistTarget);
 
     const trackLink = playlistObject.tracks.href;
+
+    const navigate = useNavigate();
 
     useEffect(() => {
         fetchTracks();
@@ -65,7 +68,9 @@ export default function TargetPlaylistsPage() {
                 console.log('uri: ' + uri)
                 console.log('snapchat: ' + snapshot)
             })
-        window.location.reload();
+            .then(() => {
+                navigate("/targetplaylistpage");
+            })
     }
 
     const renderItem = (song: any, index: number) => {
