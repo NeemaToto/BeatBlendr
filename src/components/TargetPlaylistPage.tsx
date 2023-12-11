@@ -5,7 +5,7 @@ import { IconTrash } from '@tabler/icons-react'
 
 export default function TargetPlaylistsPage() {
     const location = useLocation();
-    const token = location.state.token;
+    const token = localStorage.getItem('token')
     const [tracks, setTracks] = useState([]);
     const [playlistID, setPlaylistID] = useState('');
     const [playlistSnapshot, setPlaylistSnapshot] = useState('');

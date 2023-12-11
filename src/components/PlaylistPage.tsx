@@ -59,7 +59,7 @@ export default function PlaylistPage() {
 
   function handleID(playlist: object) {
     const playlistTrack = JSON.stringify(playlist);
-    navigate("/targetplaylistpage", { state: { playlistTarget: `${playlistTrack}`, token: `${token}` } });
+    navigate("/targetplaylistpage", { state: { playlistTarget: `${playlistTrack}`} });
   }
 
   const renderItem = (playlist: any, index: number) => {
@@ -74,8 +74,6 @@ export default function PlaylistPage() {
       >
         <span onClick={() => handleID(playlist)} style={{ cursor: 'pointer' }}>
           <Image radius='sm' src={imageUrl} w={150} h={150} />
-
-
         </span>
         <Flex
           gap='xs'
