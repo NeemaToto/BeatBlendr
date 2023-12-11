@@ -65,6 +65,11 @@ export default function PlaylistPage() {
 
   const renderItem = (playlist: any, index: number) => {
     const imageUrl = playlist.images.length > 0 ? playlist.images[0].url : 'https://placekitten.com/300/300';
+
+    const playlistName = playlist.name.length > 28
+            ? `${playlist.name.substring(0, 28)}...`
+            : playlist.name;
+
     return (
       <Flex
         gap="xs"
@@ -82,7 +87,7 @@ export default function PlaylistPage() {
           justify='flex-start'
           align='flex-start'
         >
-          <Text size='md' style={{ display: 'flex', flexWrap: 'wrap' }}>{playlist.name}</Text>
+          <Text size='md' style={{ display: 'flex', flexWrap: 'wrap' }}>{playlistName}</Text>
           <div>
             <IconTrash color='red' size={16} style={{ cursor: 'pointer' }} onClick={() => handleDelete(playlist.id)} />
           </div>
@@ -96,7 +101,7 @@ export default function PlaylistPage() {
       const userid = user.id; // Access user ID directly here
       console.log('the token is: ' + token)
       console.log('user id is: ' + userid)
-      
+
       fetch(`https://api.spotify.com/v1/users/${userid}/playlists`, {
         headers: {
           'Authorization': `Bearer ${token}`
@@ -169,7 +174,6 @@ export default function PlaylistPage() {
         <IconPlaylistAdd onClick={open} size='150' style={{ cursor: 'pointer' }} />
       </Flex>
       <Divider style={{ width: '100%', marginTop: '-1.3rem', marginBottom: '1.3rem' }} />
-
       <Modal opened={opened} onClose={close} title="Create a Public Playlist:">
         <Flex
           gap="lg"
