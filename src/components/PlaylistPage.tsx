@@ -87,15 +87,14 @@ export default function PlaylistPage() {
           <div>
             <IconTrash color='red' size={16} style={{ cursor: 'pointer' }} onClick={() => handleDelete(playlist.id)} />
           </div>
-
         </Flex>
-
       </Flex>
     );
   };
 
-  const fetchPlaylists = (user) => {
+  const fetchPlaylists = (user: SpotifyUser) => {
     console.log('the token' + token)
+    console.log('user is' + user)
     fetch(`https://api.spotify.com/v1/users/${user}/playlists`, {
       headers: {
         'Authorization': `Bearer ${token}`
