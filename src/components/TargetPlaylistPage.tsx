@@ -1,7 +1,6 @@
 import { useState, useEffect } from 'react'
 import { Image, Flex, Divider, Title, Text } from '@mantine/core';
 import { IconTrash } from '@tabler/icons-react'
-import { useNavigate } from "react-router-dom";
 
 export default function TargetPlaylistsPage() {
     const token = localStorage.getItem('token')
@@ -9,7 +8,6 @@ export default function TargetPlaylistsPage() {
     const [playlistID, setPlaylistID] = useState('');
     const [playlistSnapshot, setPlaylistSnapshot] = useState('');
     const playlistObject = localStorage.getItem('playlistTrack')
-    const navigate = useNavigate();
 
      // Conditionally rendering the component when playlistObject is null
   if (!playlistObject) {
