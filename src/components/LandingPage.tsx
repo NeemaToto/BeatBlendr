@@ -5,7 +5,8 @@ import { IconBrandSpotify } from '@tabler/icons-react'
 
 export default function LandingPage() {
     const CLIENT_ID = '7b9216d7dfaf48198a6781b33411740b';
-    const REDIRECT_URI = 'http://localhost:5173/';
+    // Change REDIRECT_URI to one of the links below dependant on if pushing to vercel or hosting on localhost
+    const REDIRECT_URI = 'https://beat-blendr.vercel.app/';
     // https://beat-blendr.vercel.app/
     // http://localhost:5173/
     const AUTH_ENDPOINT = 'https://accounts.spotify.com/authorize';
