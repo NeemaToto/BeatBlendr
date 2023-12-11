@@ -31,7 +31,7 @@ export default function PlaylistPage() {
   useEffect(() => {
     if (user) {
       setUserId(user.id)
-      setTimeout(() => {fetchPlaylists(user)}, 2000);
+      setTimeout(() => {fetchPlaylists(user.id)}, 2000);
     }
   }, [user]);
 
@@ -92,7 +92,7 @@ export default function PlaylistPage() {
     );
   };
 
-  const fetchPlaylists = (user: SpotifyUser) => {
+  const fetchPlaylists = (user) => {
     console.log('the token' + token)
     console.log('user is' + user)
     fetch(`https://api.spotify.com/v1/users/${user}/playlists`, {
