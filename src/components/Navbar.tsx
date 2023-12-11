@@ -2,11 +2,9 @@ import { AppShell, NavLink } from '@mantine/core';
 import { useNavigate } from 'react-router-dom';
 import { IconLayoutDashboard, IconSearch } from '@tabler/icons-react'
 
-
 export default function Navbar() {
   const navigate = useNavigate();
   const token = localStorage.getItem('token')
-
 
   return (
     <AppShell.Navbar p="md" style={{ gap: '10px' }}>

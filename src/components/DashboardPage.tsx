@@ -1,11 +1,10 @@
-import PlaylistPage from "./Playlist";
+import PlaylistPage from "./PlaylistPage";
 
 export default function Dashboard() {
 
   return (
-
     <div className="Container">
-     <PlaylistPage />
+      <PlaylistPage />
     </div>
   );
 }

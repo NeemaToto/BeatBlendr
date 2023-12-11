@@ -1,8 +1,9 @@
-import { Route, Routes} from 'react-router-dom';
+import { Route, Routes } from 'react-router-dom';
 import NotFound from './NotFound';
 import DashboardPage from './DashboardPage';
 import SearchPage from './SearchPage';
 import LandingPage from './LandingPage';
+import TargetPlaylistPage from './TargetPlaylistPage'
 
 export default function RouterSwitcher() {
   return (
@@ -11,6 +12,7 @@ export default function RouterSwitcher() {
       <Route path="*" element={<NotFound />} />
       <Route path="/dashboard" element={<DashboardPage />} />
       <Route path="/search" element={<SearchPage />} />
+      <Route path="/targetplaylistpage" element={<TargetPlaylistPage />} />
     </Routes>
   );
 };
