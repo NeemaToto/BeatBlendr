@@ -23,6 +23,10 @@ export default function DisplayAndAddPlaylists({ title, trackURI, closeModal }) 
         }
     }, [user]);
 
+    if (!user) {
+        return <div>User not found or not loaded.</div>; // Or handle the situation differently
+      }
+
     const renderItem = (playlist: any, index: number) => {
         const imageUrl = playlist.images.length > 0 ? playlist.images[0].url : 'https://placekitten.com/300/300';
 
@@ -66,7 +70,7 @@ export default function DisplayAndAddPlaylists({ title, trackURI, closeModal }) 
     }
 
     const fetchPlaylists = () => {
-        fetch(`https://api.spotify.com/v1/users/${userId}/playlists`, {
+        fetch(`https://api.spotify.com/v1/users/${user.id}/playlists`, {
             headers: {
                 'Authorization': `Bearer ${token}`
             }

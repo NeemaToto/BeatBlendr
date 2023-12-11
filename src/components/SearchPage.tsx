@@ -99,7 +99,6 @@ export default function SearchPage() {
       </Flex>
       <Divider style={{ width: '100%' }} />
       <Modal opened={opened} onClose={close} >
-
         <DisplayAndAddPlaylists title={songName} trackURI={songURI} closeModal={close} />
       </Modal>
       <Flex
