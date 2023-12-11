@@ -145,7 +145,7 @@ export default function PlaylistPage() {
       }
     })
       .then(() => {
-        window.location.reload();
+        navigate("/targetplaylistpage")
       })
   }
 
