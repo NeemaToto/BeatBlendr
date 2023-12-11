@@ -22,6 +22,7 @@ export default function TargetPlaylistsPage() {
 
   // Use parsedPlaylistObject properties
   useEffect(() => {
+    console.log('pasd: '+ parsedPlaylistObject)
     setPlaylistID(parsedPlaylistObject.id);
     setPlaylistSnapshot(parsedPlaylistObject.snapshot_id);
   }, [parsedPlaylistObject.id, parsedPlaylistObject.snapshot_id]);
@@ -72,7 +73,7 @@ export default function TargetPlaylistsPage() {
                 console.log('snapchat: ' + snapshot)
             })
             .then(() => {
-                navigate("/targetplaylistpage");
+                setTimeout(fetchTracks, 200)
             })
     }
 
@@ -146,7 +147,7 @@ export default function TargetPlaylistsPage() {
             wrap="wrap"
         >
             {
-                renderImage(playlistObject)
+                renderImage(parsedPlaylistObject)
             }
             <Divider my='lg' style={{ width: '100%' }} />
             <Flex

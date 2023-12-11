@@ -133,7 +133,9 @@ export default function PlaylistPage() {
         'public': true
       })
     });
-    setTimeout(fetchPlaylists, 500)
+    setTimeout(fetchPlaylists, 200)
+    setPlaylistName('')
+    setPlaylistDescription('')
     close()
   }
 
@@ -145,7 +147,7 @@ export default function PlaylistPage() {
       }
     })
       .then(() => {
-        navigate("/targetplaylistpage")
+        setTimeout(fetchPlaylists, 200)
       })
   }
 

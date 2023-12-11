@@ -12,7 +12,7 @@ export default function RouterSwitcher() {
       <Route path="*" element={<NotFound />} />
       <Route path="/dashboard" element={<DashboardPage />} />
       <Route path="/search" element={<SearchPage />} />
-      <Route path="/targetplaylistpage" element={<TargetPlaylistPage />} />
+      <Route path="/targetplaylistpage" element={<TargetPlaylistPage />} /> 
     </Routes>
   );
 };
