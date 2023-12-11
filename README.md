@@ -1,7 +1,8 @@
-# BeatBlendr [Link to Vercel](https://beat-blendr.vercel.app)
+# BeatBlendr
+## [Link to Vercel](https://beat-blendr.vercel.app)
 
-## Made by Neema, Meelaud, Parker
-Everyone made equal contributions while we worked on it together and commited code under 1 account.
+## Made by Neema (A01307699), Meelaud (A01329430), and Parker (A01273312)
+Everyone made equal contributions while we worked on it together and commited code under this account.
 
 ## COMP 3170, Set G
 
