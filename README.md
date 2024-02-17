@@ -2,7 +2,6 @@
 ## [Link to Vercel](https://beat-blendr.vercel.app)
 
 ## Made by Neema (A01307699), Meelaud (A01329430), and Parker (A01273312)
-Everyone made equal contributions while we worked on it together and commited code under this account.
 
 ## COMP 3170, Set G
 
@@ -12,13 +11,7 @@ Must sign in to a real spotify account to use BeatBlendr. (Because of the way th
 
 ## Please use the Test Account to Sign In
 At the bottom of the README, there are login details on the account to use when using the application.
-Because of the way the Spotify API works, I can only have registered users access the functions of the app unless I get the app approved by the Spotify team.
-
-## Troubleshooting
-If you are experiencing problems, try:
-1. Reloading
-2. Use the log out button in the header to log out. Ensure local.storage 'token' does not exist/is clear after being logged out
-3. Log back in after logging out
+Because of the way the Spotify API works, I can only have registered users access the functions of the app unless I get the app approved by Spotify.
 
 ## To Run on Localhost
 Please go onto the LandingPage.tsx component and change REDIRECT_URI to whichever url applies. There are comments below the variable that you can copy and paste to set the right URI. (Default is the vercel link)
