@@ -11,10 +11,10 @@ Must sign in to a real spotify account to use BeatBlendr. (Because of the way th
 
 ## Please use the Test Account to Sign In
 At the bottom of the README, there are login details on the account to use when using the application.
-Because of the way the Spotify API works, I can only have registered users access the functions of the app unless I get the app approved by Spotify.
+Due to Spotify API limitations, only registered API accounts have access to BeatBlendr's functions.
 
 ## To Run on Localhost
-Please go onto the LandingPage.tsx component and change REDIRECT_URI to whichever url applies. There are comments below the variable that you can copy and paste to set the right URI. (Default is the vercel link)
+Please go onto the LandingPage.tsx component and change REDIRECT_URI. There are comments below the variable that you can copy and paste to set the right URI. (Default is the vercel link)
 Command to run is:
 1. yarn run dev
 
